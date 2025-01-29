@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  icbc-checker:
+    build: .
+    container_name: icbc-checker
+    volumes:
+      - .:/app
+    environment:
+      - TZ=America/Vancouver  # Set timezone for accurate appointment checking
+    restart: unless-stopped 
